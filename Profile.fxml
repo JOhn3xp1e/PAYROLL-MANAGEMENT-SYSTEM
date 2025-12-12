@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8" 
+           xmlns:fx="http://javafx.com/fxml/1" 
+           style="-fx-background: transparent; -fx-border-color: transparent;">
+    
+    <VBox spacing="20" style="-fx-padding: 30;">
+        <Label text="👤 My Profile" 
+               style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2d3748;"/>
+        
+        <VBox spacing="15" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 30; 
+                               -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 4);">
+            
+            <GridPane hgap="20" vgap="15">
+                <padding><Insets top="10" bottom="10"/></padding>
+                
+                <!-- Row 1 -->
+                <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileFirstName" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                           style="-fx-pref-width: 300;"/>
+                
+                <Label text="Last Name:" GridPane.rowIndex="0" GridPane.columnIndex="2"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileLastName" GridPane.rowIndex="0" GridPane.columnIndex="3"
+                           style="-fx-pref-width: 300;"/>
+                
+                <!-- Row 2 -->
+                <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileEmail" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                           style="-fx-pref-width: 300;"/>
+                
+                <Label text="Phone:" GridPane.rowIndex="1" GridPane.columnIndex="2"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profilePhone" GridPane.rowIndex="1" GridPane.columnIndex="3"
+                           style="-fx-pref-width: 300;"/>
+                
+                <!-- Row 3 -->
+                <Label text="Date of Birth:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <DatePicker fx:id="profileDOB" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                           style="-fx-pref-width: 300;"/>
+                
+                <Label text="Gender:" GridPane.rowIndex="2" GridPane.columnIndex="2"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <ComboBox fx:id="profileGender" GridPane.rowIndex="2" GridPane.columnIndex="3"
+                         style="-fx-pref-width: 300;"/>
+                
+                <!-- Row 4 -->
+                <Label text="Designation:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileDesignation" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                           style="-fx-pref-width: 300;" editable="false"/>
+                
+                <Label text="Department:" GridPane.rowIndex="3" GridPane.columnIndex="2"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileDepartment" GridPane.rowIndex="3" GridPane.columnIndex="3"
+                           style="-fx-pref-width: 300;" editable="false"/>
+                
+                <!-- Row 5 -->
+                <Label text="Address:" GridPane.rowIndex="4" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextArea fx:id="profileAddress" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="3"
+                         style="-fx-pref-width: 620; -fx-pref-height: 80;"/>
+                
+                <!-- Row 6 -->
+                <Label text="Bank Name:" GridPane.rowIndex="5" GridPane.columnIndex="0"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileBankName" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                           style="-fx-pref-width: 300;"/>
+                
+                <Label text="Account Number:" GridPane.rowIndex="5" GridPane.columnIndex="2"
+                       style="-fx-font-weight: bold; -fx-text-fill: #4a5568;"/>
+                <TextField fx:id="profileAccountNumber" GridPane.rowIndex="5" GridPane.columnIndex="3"
+                           style="-fx-pref-width: 300;"/>
+            </GridPane>
+            
+            <Button fx:id="btnUpdateProfile" text="Update Profile" 
+                    style="-fx-background-color: #4299e1; -fx-text-fill: white; -fx-font-weight: bold; 
+                           -fx-padding: 12 40; -fx-font-size: 14px; -fx-background-radius: 8;">
+<!--                <HBox.halignment>RIGHT</HBox.halignment>-->
+                <padding>
+                    <Insets top="20" right="0" bottom="0" left="0"/>
+                </padding>
+            </Button>
+            
+        </VBox>
+    </VBox>
+    
+</ScrollPane>

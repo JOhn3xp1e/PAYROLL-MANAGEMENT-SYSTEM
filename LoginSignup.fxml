@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/8" 
+           xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.payroll.controllers.LoginSignupController"
+           styleClass="gradient-background"
+           prefWidth="1920" prefHeight="1080">
+    
+    <center>
+        <StackPane fx:id="formContainer">
+            <StackPane.margin>
+                <Insets top="50" right="50" bottom="50" left="50"/>
+            </StackPane.margin>
+            
+            <!-- LOGIN FORM -->
+            <VBox fx:id="loginForm" alignment="CENTER" spacing="14" maxWidth="360" maxHeight="520">
+                
+                <!-- Modern Title with Icon -->
+                <VBox alignment="CENTER" spacing="3">
+                    <Label text="🔐" style="-fx-font-size: 32px;"/>
+                    <Label text="Welcome Back" 
+                           style="-fx-font-size: 22px; 
+                                  -fx-font-weight: bold; 
+                                  -fx-text-fill: #2d3436;
+                                  -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                    <Label text="Sign in to continue" 
+                           style="-fx-font-size: 11px; 
+                                  -fx-text-fill: #636e72;
+                                  -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                </VBox>
+                
+                <VBox spacing="10" alignment="CENTER">
+                    <VBox spacing="4">
+                        <Label text="Username" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <TextField fx:id="loginUsernameField" 
+                                  promptText="Enter your username" 
+                                  style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <VBox spacing="4">
+                        <Label text="Password" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <PasswordField fx:id="loginPasswordField" 
+                                      promptText="Enter your password"
+                                      style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <Label fx:id="loginErrorLabel" visible="false" wrapText="true" maxWidth="300"/>
+                    
+                    <Button fx:id="loginButton" 
+                            text="Sign In" 
+                            onAction="#handleLogin"
+                            maxWidth="300"
+                            prefWidth="300">
+                        <padding>
+                            <Insets top="10" bottom="10"/>
+                        </padding>
+                    </Button>
+                    
+                    <Separator style="-fx-pref-width: 260; -fx-background-color: #dfe6e9;">
+                        <padding>
+                            <Insets top="5" bottom="5"/>
+                        </padding>
+                    </Separator>
+                    
+                    <HBox spacing="4" alignment="CENTER">
+                        <Label text="Don't have an account?" 
+                               style="-fx-text-fill: #636e72; 
+                                      -fx-font-size: 11px;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                        <Button fx:id="switchToSignupBtn" 
+                                text="Sign Up" 
+                                onAction="#switchToSignup"/>
+                    </HBox>
+                </VBox>
+                
+                <padding>
+                    <Insets top="24" right="28" bottom="24" left="28"/>
+                </padding>
+            </VBox>
+            
+            <!-- SIGNUP FORM -->
+            <VBox fx:id="signupForm" alignment="CENTER" spacing="10" maxWidth="360" maxHeight="560">
+                
+                <!-- Modern Title with Icon -->
+                <VBox alignment="CENTER" spacing="3">
+                    <Label text="📝" style="-fx-font-size: 32px;"/>
+                    <Label text="Create Account" 
+                           style="-fx-font-size: 22px; 
+                                  -fx-font-weight: bold; 
+                                  -fx-text-fill: #2d3436;
+                                  -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                    <Label text="Join us today" 
+                           style="-fx-font-size: 11px; 
+                                  -fx-text-fill: #636e72;
+                                  -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                </VBox>
+                
+                <VBox spacing="7" alignment="CENTER">
+                    <VBox spacing="3">
+                        <Label text="Username" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <TextField fx:id="signupUsernameField" 
+                                  promptText="Choose a username"
+                                  style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <HBox spacing="7">
+                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                            <Label text="First Name" 
+                                   style="-fx-font-size: 10px; 
+                                          -fx-font-weight: 600; 
+                                          -fx-text-fill: #2d3436;
+                                          -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                                <padding>
+                                    <Insets left="5"/>
+                                </padding>
+                            </Label>
+                            <TextField fx:id="signupFirstNameField" 
+                                      promptText="e.g., John"
+                                      style="-fx-prompt-text-fill: #b2bec3;"/>
+                        </VBox>
+                        <VBox spacing="3" HBox.hgrow="ALWAYS">
+                            <Label text="Last Name" 
+                                   style="-fx-font-size: 10px; 
+                                          -fx-font-weight: 600; 
+                                          -fx-text-fill: #2d3436;
+                                          -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                                <padding>
+                                    <Insets left="5"/>
+                                </padding>
+                            </Label>
+                            <TextField fx:id="signupLastNameField" 
+                                      promptText="e.g., Doe"
+                                      style="-fx-prompt-text-fill: #b2bec3;"/>
+                        </VBox>
+                    </HBox>
+                    
+                    <VBox spacing="3">
+                        <Label text="Email" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <TextField fx:id="signupEmailField" 
+                                  promptText="your.email@example.com"
+                                  style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <VBox spacing="3">
+                        <Label text="Password" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <PasswordField fx:id="signupPasswordField" 
+                                      promptText="At least 6 characters"
+                                      style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <VBox spacing="3">
+                        <Label text="Confirm Password" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <PasswordField fx:id="signupConfirmPasswordField" 
+                                      promptText="Re-enter your password"
+                                      style="-fx-prompt-text-fill: #b2bec3;"/>
+                    </VBox>
+                    
+                    <VBox spacing="3">
+                        <Label text="Role" 
+                               style="-fx-font-size: 10px; 
+                                      -fx-font-weight: 600; 
+                                      -fx-text-fill: #2d3436;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;">
+                            <padding>
+                                <Insets left="5"/>
+                            </padding>
+                        </Label>
+                        <ComboBox fx:id="signupRoleCombo" 
+                                 promptText="Select your role" 
+                                 maxWidth="300"
+                                 prefWidth="300"/>
+                    </VBox>
+                    
+                    <Label fx:id="signupErrorLabel" visible="false" wrapText="true" maxWidth="300"/>
+                    
+                    <Button fx:id="signupButton" 
+                            text="Create Account" 
+                            onAction="#handleSignup"
+                            maxWidth="300"
+                            prefWidth="300">
+                        <padding>
+                            <Insets top="10" bottom="10"/>
+                        </padding>
+                    </Button>
+                    
+                    <Separator style="-fx-pref-width: 260; -fx-background-color: #dfe6e9;">
+                        <padding>
+                            <Insets top="4" bottom="4"/>
+                        </padding>
+                    </Separator>
+                    
+                    <HBox spacing="4" alignment="CENTER">
+                        <Label text="Already have an account?" 
+                               style="-fx-text-fill: #636e72; 
+                                      -fx-font-size: 11px;
+                                      -fx-font-family: 'Segoe UI', Arial, sans-serif;"/>
+                        <Button fx:id="switchToLoginBtn" 
+                                text="Sign In" 
+                                onAction="#switchToLogin"/>
+                    </HBox>
+                </VBox>
+                
+                <padding>
+                    <Insets top="20" right="28" bottom="20" left="28"/>
+                </padding>
+            </VBox>
+            
+        </StackPane>
+    </center>
+    
+</BorderPane>
